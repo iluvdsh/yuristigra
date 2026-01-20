@@ -150,3 +150,9 @@ ul {
   .cards { grid-template-columns: 1fr; }
 }
 
+.slide-1 { background-image: url("slide1.jpg"); }
+.slide-2 { background-image: url("slide2.jpg"); }
+.slide-3 { background-image: url("slide3.jpg"); }
+.slide-4 { background-image: url("slide4.jpg"); }
+.slide-5 { background-image: url("slide5.jpg"); }
+
