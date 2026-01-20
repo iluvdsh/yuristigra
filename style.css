@@ -34,7 +34,7 @@ body {
 }
 
 .logo img {
-  height: 36px;
+  height: 40px;
 }
 
 .slider {
@@ -149,3 +149,4 @@ ul {
   .slide { padding: 100px 24px; }
   .cards { grid-template-columns: 1fr; }
 }
+
