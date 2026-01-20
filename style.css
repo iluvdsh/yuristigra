@@ -1,7 +1,5 @@
 :root {
   --red: #b11217;
-  --dark: #111;
-  --light: #ffffff;
 }
 
 * {
@@ -11,121 +9,69 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: var(--light);
-  color: var(--dark);
   overflow: hidden;
+  background: #fff;
 }
+
+/* ===== ШАПКА ===== */
 
 .topbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   padding: 16px 40px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   z-index: 10;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
 }
 
 .logo img {
-  height: 72px;
+  height: 64px;
 }
 
+/* ===== СЛАЙДЕР ===== */
+
 .slider {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 .slide {
   position: absolute;
   inset: 0;
-  padding: 120px 80px;
+  background-size: cover;
+  background-position: center;
   opacity: 0;
-  transform: translateX(40px);
-  transition: all .6s ease;
+  transition: opacity 0.6s ease;
 }
 
 .slide.active {
   opacity: 1;
-  transform: translateX(0);
 }
 
-.slide.light {
-  background: #fff;
-}
+/* ===== ФОНЫ СЛАЙДОВ ===== */
 
-.slide.red {
-  background: var(--red);
-  color: #fff;
-}
+.slide-1 { background-image: url("slide1.png"); }
+.slide-2 { background-image: url("slide2.png"); }
+.slide-3 { background-image: url("slide3.png"); }
+.slide-4 { background-image: url("slide4.png"); }
+.slide-5 { background-image: url("slide5.png"); }
+.slide-6 { background-image: url("slide6.png"); }
+.slide-7 { background-image: url("slide7.png"); }
 
-.content {
-  max-width: 900px;
-}
-
-.framed {
-  border: 2px solid rgba(255,255,255,.6);
-  padding: 40px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  font-size: 24px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #fff;
-  color: #111;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.slide.red .card {
-  background: rgba(255,255,255,.95);
-}
-
-ul {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.results {
-  margin-top: 20px;
-}
-
-.cta {
-  margin-top: 30px;
-  padding: 12px 28px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  color: var(--red);
-  font-weight: 500;
-}
-
-.slide.light .cta {
-  background: var(--red);
-  color: #fff;
-}
+/* ===== НАВИГАЦИЯ ===== */
 
 .nav {
   position: fixed;
@@ -138,22 +84,20 @@ ul {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .prev { left: 30px; }
 .next { right: 30px; }
 
-/* MOBILE */
+/* ===== МОБИЛКА ===== */
+
 @media (max-width: 768px) {
-  h1 { font-size: 36px; }
-  .slide { padding: 100px 24px; }
-  .cards { grid-template-columns: 1fr; }
+  .logo img {
+    height: 48px;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
 }
-
-.slide-1 { background-image: url("slide1.jpg"); }
-.slide-2 { background-image: url("slide2.jpg"); }
-.slide-3 { background-image: url("slide3.jpg"); }
-.slide-4 { background-image: url("slide4.jpg"); }
-.slide-5 { background-image: url("slide5.jpg"); }
-
-
