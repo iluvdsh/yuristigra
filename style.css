@@ -1,43 +1,21 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: #000;
-}
-
-/* ===== HEADER ===== */
-
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  height: 72px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255,255,255,0.85);
-}
-
-.topbar img {
-  height: 48px;
-}
-
-.topbar span {
-  font-size: 20px;
-  font-family: serif;
 }
 
 /* ===== SLIDER ===== */
 
 .slider {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  position: fixed;
+  inset: 0;
 }
 
 /* ===== SLIDE ===== */
@@ -53,14 +31,16 @@ body {
   opacity: 1;
 }
 
+/* ===== IMAGE ===== */
+
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* КЛЮЧЕВО */
-  object-position: center; /* центр композиции */
+  object-fit: cover;        /* КЛЮЧЕВО */
+  object-position: center;  /* центр композиции */
 }
 
-/* ===== NAV ===== */
+/* ===== NAV BUTTONS ===== */
 
 .nav {
   position: fixed;
@@ -68,25 +48,23 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #b11217;
-  color: #fff;
   border: none;
+  background: rgba(177, 18, 23, 0.9);
+  color: #fff;
   font-size: 22px;
-  z-index: 10;
   cursor: pointer;
+  z-index: 10;
 }
 
 .prev { left: 24px; }
 .next { right: 24px; }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE TOUCH OPTIMIZATION ===== */
 
 @media (max-width: 768px) {
-  .topbar {
-    height: 60px;
-  }
-
-  .topbar img {
-    height: 40px;
+  .nav {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
 }
